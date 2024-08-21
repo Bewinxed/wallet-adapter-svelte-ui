@@ -5,7 +5,7 @@ import { resolve } from 'path';
 
 export default defineConfig({
 	plugins: [
-		sveltekit()
+		svelte()
 		// scopeTailwind({
 		// 	react: 'false'
 		// })
