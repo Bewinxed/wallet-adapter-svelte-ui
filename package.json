@@ -1,6 +1,6 @@
 {
     "name": "@bewinxed/wallet-adapter-svelte-ui",
-    "version": "0.1.10",
+    "version": "0.1.11",
     "author": "Solana Maintainers <maintainers@solana.foundation>",
     "repository": "https://github.com/bewinxed/wallet-adapter",
     "license": "Apache-2.0",
