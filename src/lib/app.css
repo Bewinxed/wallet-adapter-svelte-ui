@@ -1,0 +1,16 @@
+@tailwind base;
+@tailwind components;
+@tailwind utilities;
+
+
+.transition-container {
+ display: grid;
+ /* 1 row 1 column */
+ grid-template-columns: 1fr;
+ grid-template-rows: 1fr;
+}
+
+.transition-container > div {
+ grid-column: 1;
+ grid-row: 1;
+}
