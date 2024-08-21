@@ -1,11 +1,14 @@
 # `@solana/wallet-adapter-base-ui`
 
-This is a direct port of (anza-xyz/wallet-adapter)[https://github.com/anza-xyz/wallet-adapter] to Svelte 5 (Will not support older versions).
+This is a direct port of [anza-xyz/wallet-adapter](https://github.com/anza-xyz/wallet-adapter) to Svelte 5 (Will not support older versions).
 
 With (IMO) better UI, Accessibility, and Performance.
 
+# Requirements
+**Note:** Svelte 5 & TailwindCSS are required!
+
 ## Installation
-Make sure you install the (Wallet Adapter)[https://www.npmjs.com/package/@bewinxed/wallet-adapter-svelte] first.
+Make sure you install the [Wallet Adapter](https://www.npmjs.com/package/@bewinxed/wallet-adapter-svelte) first.
 ```
 npm install @bewinxed/wallet-adapter-svelte-ui
 pnpm add @bewinxed/wallet-adapter-svelte-ui
@@ -95,9 +98,9 @@ You can use the following CSS variables to customize the WalletAdapter Svelte UI
 ## Comparison
 Better Modal UI, Native modal on mobile.
 Old:
-![alt text](image-1.png)
+![before](https://github.com/bewinxed/wallet-adapter-svelte-ui/blob/main/static/image-1.png?raw=true)
 New:
-![alt text](image.png)
+![after](https://github.com/bewinxed/wallet-adapter-svelte-ui/blob/main/static/image.png?raw=true)
 
 ## Next up.
 - Add helpful utilities to generate messages/transactions/send transactions.
