@@ -1,4 +1,4 @@
-# `@solana/wallet-adapter-base-ui`
+# `@bewinxed/wallet-adapter-svelte-ui`
 
 This is a direct port of [anza-xyz/wallet-adapter](https://github.com/anza-xyz/wallet-adapter) to Svelte 5 (Will not support older versions).
 
@@ -97,8 +97,10 @@ You can use the following CSS variables to customize the WalletAdapter Svelte UI
 
 ## Comparison
 Better Modal UI, Native modal on mobile.
+
 Old:
 ![before](https://github.com/bewinxed/wallet-adapter-svelte-ui/blob/main/static/image-1.png?raw=true)
+
 New:
 ![after](https://github.com/bewinxed/wallet-adapter-svelte-ui/blob/main/static/image.png?raw=true)
 

@@ -27,7 +27,7 @@
 </script>
 
 <ConnectionProvider config={{}} endpoint="https://api.devnet.solana.com">
-	<WalletProvider
+	<WalletProvider 
 		{wallets}
 		onconnect={(publicKey) => {
 			toast.message('Connected to ' + publicKey?.toBase58());
