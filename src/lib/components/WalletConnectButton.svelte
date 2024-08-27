@@ -1,9 +1,7 @@
 <script lang="ts">
 	import type { ButtonProps } from '$lib/button';
-	import { slide } from 'svelte/transition';
 	import { useWalletConnectButton } from '../useWalletConnectButton.svelte.js';
 	import Button from './Button.svelte';
-	import WalletIcon from './WalletIcon.svelte';
 
 	const { className, disabled, endIcon, startIcon, children, ...props }: ButtonProps = $props();
 
@@ -19,9 +17,7 @@
 
 <Button
 	{...props}
-	class="wallet-adapter-button-trigger {buttonState === 'connected'
-		? 'connected'
-		: ''} {className}"
+	class="wallet-adapter-button-trigger {buttonState === 'connected' ? 'connected' : ''} {className}"
 	disabled={disabled || buttonDisabled}
 	onclick={onButtonClick}
 	startIcon={walletIcon}

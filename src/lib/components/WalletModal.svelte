@@ -1,15 +1,15 @@
 <script lang="ts">
-	import DigitalAssetIcon from './DigitalAssetIcon.svelte';
-	import { dialogEsc, dialogOpen } from '../ui/dialogFixer';
-	import { swipeToClose } from '../ui/swipeToClose';
-	import { useBreakpoint } from '../ui/useBreakpoint.svelte';
 	import type { Wallet } from '@bewinxed/wallet-adapter-svelte';
 	import { useSolana } from '@bewinxed/wallet-adapter-svelte';
 	import { WalletReadyState } from '@solana/wallet-adapter-base';
 	import { onMount } from 'svelte';
 	import { sineInOut } from 'svelte/easing';
 	import { fly, slide } from 'svelte/transition';
+	import { dialogEsc, dialogOpen } from '../ui/dialogFixer';
+	import { swipeToClose } from '../ui/swipeToClose';
+	import { useBreakpoint } from '../ui/useBreakpoint.svelte';
 	import { useWalletModal } from '../useWalletModal.svelte';
+	import DigitalAssetIcon from './DigitalAssetIcon.svelte';
 	import WalletListItem from './WalletListItem.svelte';
 
 	let {
@@ -170,7 +170,7 @@
 	use:swipeToClose
 	use:dialogOpen
 	use:dialogEsc
-	onopen={onopen}
+	{onopen}
 	class:!min-h-[70vh]={infoSectionExpanded && breakpoint === 'xs'}
 	aria-labelledby="wallet-adapter-modal-title"
 	class="wallet-adapter-modal shadow-2xls bottom-0 top-auto m-0 mx-auto flex min-h-[50vh] w-screen max-w-[100vw] flex-1 rounded-xl p-0 transition-[height,min-height] duration-[250ms] ease-in-out sm:top-0 sm:my-auto sm:min-h-[50vh] sm:w-fit sm:min-w-[40rem] sm:max-w-lg sm:place-self-auto md:max-w-xl lg:max-w-2xl xl:max-w-3xl {className} h-min border sm:shadow-2xl"
@@ -224,10 +224,7 @@
 						</li>
 
 						{#each collapsedWallets as wallet (wallet.adapter.name)}
-							<li
-								class="contents"
-								class:animate-pulse={wallet.status === 'connecting'}
-							>
+							<li class="contents" class:animate-pulse={wallet.status === 'connecting'}>
 								<WalletListItem
 									{wallet}
 									onclick={() => {
@@ -249,9 +246,7 @@
 					out:slide={{ axis: 'y', duration: 250, easing: sineInOut }}
 					class="wallet-adapter-modal-container flex place-items-center justify-between"
 				>
-					<h1 class="wallet-adapter-modal-title font-semibold text-gray-700">
-						New to Solana?
-					</h1>
+					<h1 class="wallet-adapter-modal-title font-semibold text-gray-700">New to Solana?</h1>
 					<button
 						class="group inline-flex items-center text-sm font-semibold capitalize hover:border-b"
 						onclick={() => {
@@ -331,11 +326,7 @@
 									onclick={() => (walletModal.visible = false)}
 									class="wallet-adapter-modal-button-close rounded-full bg-gray-200 p-1 backdrop-blur"
 								>
-									<svg
-										xmlns="http://www.w3.org/2000/svg"
-										viewBox="0 0 24 24"
-										class="h-4 w-4"
-									>
+									<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24" class="h-4 w-4">
 										<g fill="none" fill-rule="evenodd">
 											<path
 												d="M24 0v24H0V0zM12.593 23.258l-.011.002l-.071.035l-.02.004l-.014-.004l-.071-.035q-.016-.005-.024.005l-.004.01l-.017.428l.005.02l.01.013l.104.074l.015.004l.012-.004l.104-.074l.012-.016l.004-.017l-.017-.427q-.004-.016-.017-.018m.265-.113l-.013.002l-.185.093l-.01.01l-.003.011l.018.43l.005.012l.008.007l.201.093q.019.005.029-.008l.004-.014l-.034-.614q-.005-.019-.02-.022m-.715.002a.02.02 0 0 0-.027.006l-.006.014l-.034.614q.001.018.017.024l.015-.002l.201-.093l.01-.008l.004-.011l.017-.43l-.003-.012l-.01-.01z"
@@ -355,25 +346,16 @@
 							<div class="flex items-start gap-4">
 								<DigitalAssetIcon />
 								<div>
-									<h3 class="text-sm font-semibold">
-										A home for your digital assets
-									</h3>
+									<h3 class="text-sm font-semibold">A home for your digital assets</h3>
 									<p class="text-sm text-gray-600">
-										Wallets are used to send, receive, store, and display
-										digital assets like Ethereum and NFTs.
+										Wallets are used to send, receive, store, and display digital assets like
+										Ethereum and NFTs.
 									</p>
 								</div>
 							</div>
 							<div class="flex items-center gap-4">
-								<div
-									style="box-shadow:var(--chin-shadow);"
-									class="h-14 w-14 rounded-lg border p-1"
-								>
-									<svg
-										xmlns="http://www.w3.org/2000/svg"
-										viewBox="0 0 24 24"
-										class="h-11"
-									>
+								<div style="box-shadow:var(--chin-shadow);" class="h-14 w-14 rounded-lg border p-1">
+									<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24" class="h-11">
 										<g fill="none">
 											<path
 												d="M24 0v24H0V0zM12.593 23.258l-.011.002l-.071.035l-.02.004l-.014-.004l-.071-.035q-.016-.005-.024.005l-.004.01l-.017.428l.005.02l.01.013l.104.074l.015.004l.012-.004l.104-.074l.012-.016l.004-.017l-.017-.427q-.004-.016-.017-.018m.265-.113l-.013.002l-.185.093l-.01.01l-.003.011l.018.43l.005.012l.008.007l.201.093q.019.005.029-.008l.004-.014l-.034-.614q-.005-.019-.02-.022m-.715.002a.02.02 0 0 0-.027.006l-.006.014l-.034.614q.001.018.017.024l.015-.002l.201-.093l.01-.008l.004-.011l.017-.43l-.003-.012l-.01-.01z"
@@ -388,8 +370,8 @@
 								<div>
 									<h3 class="text-sm font-semibold">Your digital passport</h3>
 									<p class="text-sm text-gray-600">
-										You can use your wallet as your identity, and use it to sign
-										into your favorite apps.
+										You can use your wallet as your identity, and use it to sign into your favorite
+										apps.
 									</p>
 								</div>
 							</div>

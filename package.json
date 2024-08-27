@@ -43,13 +43,13 @@
         "format": "prettier --write ."
     },
     "peerDependencies": {
-        "@solana/web3.js": "^1.95.2",
+        "@solana/web3.js": "^2.0.0-rc.1",
         "svelte": "^5.0.0-next.1",
         "@bewinxed/wallet-adapter-svelte": "../../core/svelte",
         "@solana/wallet-adapter-wallets": "^0.19.32"
     },
     "dependencies": {
-        "@bewinxed/wallet-standard-wallet-adapter-svelte": "^1.1.4"
+        "@bewinxed/wallet-standard-wallet-adapter-svelte": "^1.1.6"
     },
     "devDependencies": {
         "@sveltejs/adapter-auto": "^3.2.4",
@@ -69,7 +69,7 @@
         "prettier-plugin-tailwindcss": "^0.6.6",
         "publint": "^0.1.16",
         "shx": "^0.3.4",
-        "svelte": "^5.0.0-next.239",
+        "svelte": "^5.0.0-next.240",
         "svelte-check": "^3.8.6",
         "svelte-sonner": "^0.3.27",
         "tailwindcss": "^3.4.10",

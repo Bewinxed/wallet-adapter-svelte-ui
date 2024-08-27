@@ -1,11 +1,7 @@
 <script lang="ts">
 	import WalletModalProvider from '$lib/components/WalletModalProvider.svelte';
 	import { ConnectionProvider, WalletProvider } from '@bewinxed/wallet-adapter-svelte';
-	import {
-		PhantomWalletAdapter,
-		SolflareWalletAdapter,
-		MathWalletAdapter
-	} from '@solana/wallet-adapter-wallets';
+
 	import { Toaster, toast } from 'svelte-sonner';
 
 	import '../lib/app.css';
@@ -20,17 +16,17 @@
 
 	const wallets = [
 		// new UnsafeBurnerWalletAdapter(),
-		new PhantomWalletAdapter(),
-		new SolflareWalletAdapter(),
-		new MathWalletAdapter()
+		// new PhantomWalletAdapter(),
+		// new SolflareWalletAdapter(),
+		// new MathWalletAdapter()
 	];
 </script>
 
 <ConnectionProvider config={{}} endpoint="https://api.devnet.solana.com">
-	<WalletProvider 
+	<WalletProvider
 		{wallets}
-		onconnect={(publicKey) => {
-			toast.message('Connected to ' + publicKey?.toBase58());
+		onconnect={(address) => {
+			toast.message('Connected to ' + address);
 		}}
 		ondisconnect={() => {
 			toast.message('Disconnected');

@@ -1,7 +1,6 @@
 <script lang="ts">
 	import type { ButtonProps } from '$lib/button';
 	import { useWalletDisconnectButton } from '../useWalletDisconnectButton.svelte.js';
-	import BaseWalletConnectionButton from './BaseWalletConnectionButton.svelte';
 	import Button from './Button.svelte';
 
 	const {

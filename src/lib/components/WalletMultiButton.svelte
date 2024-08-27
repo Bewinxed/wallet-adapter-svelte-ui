@@ -65,8 +65,8 @@
 	} as const;
 
 	let content = $derived(
-		wallet?.publicKey
-			? `${wallet.publicKey.toBase58().slice(0, 4)}..${wallet.publicKey.toBase58().slice(-4)}`
+		wallet?.address
+			? `${wallet.address.slice(0, 4)}..${wallet.address.slice(-4)}`
 			: buttonState === 'connecting' || buttonState === 'has-wallet'
 				? labels[buttonState]
 				: labels['no-wallet']
@@ -270,14 +270,14 @@
 				}}
 				id="wallet-adapter-dropdown-list"
 				aria-label="dropdown-list"
-				class="absolute bg-white top-full left-0 z-10 min-w-56 shadow-xl wallet-adapter-dropdown-list mt-1 flex max-w-xs flex-1 flex-col divide-y {menuOpen &&
+				class="absolute bg-white top-full left-0 z-10 rounded-lg min-w-56 shadow-xl wallet-adapter-dropdown-list mt-1 flex max-w-xs flex-1 flex-col divide-y {menuOpen &&
 					'wallet-adapter-dropdown-list-active'}"
 				bind:this={menuElement}
 				role="menu"
 				transition:slide={{ axis: 'y' }}
 				onclick={(e) => {}}
 			>
-				{#if wallet?.publicKey}
+				{#if wallet?.address}
 					<li class="contents first:rounded-t-lg last:rounded-b-lg rounded-[unset]">
 						<Button
 							flat
@@ -285,9 +285,9 @@
 							class="wallet-adapter-dropdown-list-item flex flex-1 justify-start items-center gap-2 rounded-[inherit] font-normal text-sm"
 							onclick={async (e) => {
 								if (oncopy) {
-									oncopy(wallet.publicKey!);
+									oncopy(wallet.address!);
 								}
-								await navigator.clipboard.writeText(wallet.publicKey!.toBase58());
+								await navigator.clipboard.writeText(wallet.address!);
 								copied = true;
 								setTimeout(() => (copied = false), 500);
 							}}
