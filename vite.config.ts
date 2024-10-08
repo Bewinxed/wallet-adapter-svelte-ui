@@ -1,7 +1,7 @@
 import { defineConfig } from 'vite';
-import { sveltekit } from '@sveltejs/kit/vite';
 import { svelte } from '@sveltejs/vite-plugin-svelte';
-import { resolve } from 'path';
+import { resolve } from 'node:path';
+import { sveltekit } from '@sveltejs/kit/vite';
 
 export default defineConfig({
 	plugins: [
@@ -32,10 +32,11 @@ export default defineConfig({
 			fileName: 'index',
 			formats: ['es']
 		},
+
 		rollupOptions: {
 			external: [
 				'@solana/web3.js',
-				'@solana/wallet-adapter-base',
+				'@bewinxed/wallet-adapter-base',
 				'@solana/wallet-adapter-base-ui',
 				'@solana/wallet-adapter-wallets',
 				'@bewinxed/wallet-adapter-svelte'
